@@ -1,29 +1,33 @@
----
-title: "Atividade_R"
-output: html_document
-date: "2022-08-30"
----
+# Enzo Silvério Borges Dias
+# linkedin.com/in/enzo-silvério-borges-dias-82760224a
+# Atividade sugerida pelo professor wandré - linkedin.com/in/wandreveloso
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Importando os dados da biblioteca DsLabs.
+library(dslabs)
 
-## R Markdown
+# Importando os dados do dataframe - Movielens.
+data(movielens)
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# Por meio da coluna MovieID, verificando quantas linhas existem no dataframe importado. 
+length(movielens$movieId)
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+# Verificando quantas colunas existem no dataframe.
+length(movielens)
 
-```{r cars}
-summary(cars)
-```
+# Vendo qual a classe dos valores que estão na coluna Title, que são "character".
+class(movielens$title)
 
-## Including Plots
+#Vendo qual a classe dos valores que estão na coluna Title, que são "factor".
+class(movielens$genres)
 
-You can also embed plots, for example:
+# Vendo quantos gêneros diferentes/únicos existem no dataframe.
+length(levels(movielens$genres))
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+#Vendo quais são os gêneros de filmes que estão no dataframe.
+levels(movielens$genres)
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# Vendo quais os títulos que estão presentes no dataframe.
+levels(movielens$title)
+
+# Mostrando qual a estrutura desse dataframe, quantas e quais colunas, o tipo de valor dentro de cada uma e os primeiros valores de cada uma.
+str(movielens)
